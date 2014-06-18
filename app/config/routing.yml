@@ -1,0 +1,5 @@
+metalmini_fast:
+    resource: "@MetalminiFastBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

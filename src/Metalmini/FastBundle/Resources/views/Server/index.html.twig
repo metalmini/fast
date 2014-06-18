@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="starter-template">
+        <h1>Server list</h1>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Ip</th>
+                <th>Rootpasswd</th>
+                <th>Sudouser</th>
+                <th>Sudopasswd</th>
+                <th>Mysqlroot</th>
+                <th>Mysqlrootpasswd</th>
+                <th>Altnames</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('server_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.ip }}</td>
+                    <td>{{ entity.rootpasswd }}</td>
+                    <td>{{ entity.sudouser }}</td>
+                    <td>{{ entity.sudopasswd }}</td>
+                    <td>{{ entity.mysqlroot }}</td>
+                    <td>{{ entity.mysqlrootpasswd }}</td>
+                    <td>{{ entity.altnames }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('server_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('server_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('server_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}
