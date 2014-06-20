@@ -73,10 +73,9 @@ class Server
     /**
      * @var array
      *
-     * @ORM\Column(name="altnames", type="json_array")
+     * @ORM\Column(name="altnames", type="string", length=255)
      */
     private $altnames;
-
 
     /**
      * Get id
@@ -270,5 +269,30 @@ class Server
     public function getAltnames()
     {
         return $this->altnames;
+    }
+
+    /**
+     * Get connectionstring
+     *
+     * @return string
+     */
+    public function getConnectstring()
+    {
+        $user = $this->getSudouser();
+        if (empty($user)) {
+            $user = 'root';
+        }
+
+        return 'ssh ' . $user . '@' . $this->getIp();
+    }
+
+    /**
+     * Magic method toString
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName() . ' | ' . $this->getIp() . ' | ' . $this->getAltnames();
     }
 }

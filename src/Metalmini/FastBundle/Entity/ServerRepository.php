@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class ServerRepository extends EntityRepository
 {
+    /**
+     * Get all servers by searching for the name or altname
+     *
+     * @param $name
+     * @return array
+     */
+    public function findByName($name)
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb->andWhere('s.name = :name');
+        $qb->orWhere('s.altnames = :name');
+        $qb->setParameter(':name', $name);
+
+        return $qb->getQuery()->getResult();
+    }
 }
