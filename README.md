@@ -9,9 +9,13 @@ Fast
 Don't forget to correct the permissions on the log and cache folder (check out the symfony docs for this).
 
 ```$ git clone git@github.com:metalmini/fast.git```
+
 ```$ composer install```
+
 ```$ bin/console doctrine:database:create```
+
 ```$ bin/console doctrine:schema:create```
+
 ```$ bin/console assets:install web --env=dev```
 
 
