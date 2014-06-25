@@ -2,6 +2,8 @@ Fast
 ======
 **Fast** Logging in servers the easy way
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1b0a54ce-40fd-49ba-a1ea-edee1186ecda/big.png)](https://insight.sensiolabs.com/projects/1b0a54ce-40fd-49ba-a1ea-edee1186ecda)
+
 ## Download
 * [Current master](https://github.com/metalmini/fast/archive/master.zip)
 
@@ -26,9 +28,6 @@ Don't forget to correct the permissions on the log and cache folder (check out t
 
 ## License 
 * see [LICENSE](https://github.com/metalmini/fast/blob/master/LICENSE) file
-
-## Version 
-* Version X.Y
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/metalmini/fast/blob/master/INSTRUCTIONS.md) file

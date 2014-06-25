@@ -12,8 +12,6 @@ use Metalmini\FastBundle\Form\ServerType;
 
 /**
  * Server controller.
- *
- * @Route("/server")
  */
 class ServerController extends Controller
 {
